@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Family Bookings{% endblock %}
+
+{% block content %}
+<div class="room-container">
+    <div class="jumbotron mt-4">
+        <h1 class="display-4">Booking Family List</h1>
+        <hr class="my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Last Name</th>
+                    <th>Phone</th>
+                    <th>Members</th>
+                    <th>Arrival Date</th>
+                    <th>Exit Date</th>
+                    <th>Room</th>
+                    <th>Services</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in bookings_family %}
+                <tr>
+                    <td><a href="{% url 'Booking-Family-Detail' booking.pk %}">{{ booking.name }}</a></td>
+                    <td>{{ booking.last_name }}</td>
+                    <td>{{ booking.phone }}</td>
+                    <td>{{ booking.members }}</td>
+                    <td>{{ booking.arrival_date }}</td>
+                    <td>{{ booking.exit_date }}</td>
+                    <td>{{ booking.room.room }}</td>
+                    <td>
+                        {% for service in booking.services.all %}
+                            {{ service.services }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<a href="{% url 'Home' %}">Back to Home</a>
+{% endblock %}
+

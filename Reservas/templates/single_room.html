@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Room Details{% endblock %}
+
+{% block content %}
+<div class="room-container">
+    <div class="jumbotron mt-4">
+        <h1>{{ room.room }}</h1>
+        <hr class="my-4">
+        <table class="table table-striped">
+        <p><strong>Price:</strong> {{ room.price }}</p>
+        <p><strong>This room offers:</strong> {{ room.description }}</p>
+    </div>
+</div>
+<a href="{% url 'Home' %}">Back to Home</a>
+<br>
+<a href="{% url 'Room-List' %}">Back to Room List</a>
+{% endblock %}
+
+
+

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Booking Family Details{% endblock %}
+
+{% block content %}
+<div class="room-container">
+    <div class="jumbotron mt-4">
+        <h1 class="display-4">Booking Family Details</h1>
+        <hr class="my-4">
+        <table class="table table-striped">
+        <p><strong>Name:</strong> {{ booking_family.name }}</p>
+        <p><strong>Last Name:</strong> {{ booking_family.last_name }}</p>
+        <p><strong>Phone:</strong> {{ booking_family.phone }}</p>
+        <p><strong>Members:</strong> {{ booking_family.members }}</p>
+        <p><strong>Arrival Date:</strong> {{ booking_family.arrival_date }}</p>
+        <p><strong>Exit Date:</strong> {{ booking_family.exit_date }}</p>
+        <p><strong>Room:</strong> {{ booking_family.room.room }}</p>
+        <p><strong>Room Price:</strong> {{ booking_family.room.price }}</p>
+        <p><strong>Services:</strong></p>
+        <ul>
+            {% for service in booking_family.services.all %}
+            <li>{{ service.services }}: {{ service.price }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Total:</strong> {{ total }}</p> <!-- Muestra el total aquí -->
+    </div>
+</div>
+<a href="{% url 'Home' %}">Back to Home</a>
+<br>
+<a href="{% url 'Booking-Family-List' %}">Back to Family Booking List</a>
+{% endblock %}

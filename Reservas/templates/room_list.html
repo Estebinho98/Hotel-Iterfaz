@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Rooms{% endblock %}
+
+{% block content %}
+<div class="room-container">
+    <div class="jumbotron mt-4">
+        <h1 class="display-4">Our Rooms</h1>
+        <p class="lead">Explore the wide range of rooms we offer to make your stay exceptional.</p>
+        <hr class="my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Room</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for room in rooms %}
+                <tr>
+                    <td><a href="{% url 'Room-Detail' room.pk %}">{{ room.room }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<a href="{% url 'Home' %}">Back to Home</a>
+
+{% endblock %}
+

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Services{% endblock %}
+
+{% block content %}
+<div class="services-container">
+    <div class="jumbotron mt-4">
+        <h1 class="display-4">Our Services</h1>
+        <p class="lead">Explore the wide range of services we offer to make your stay exceptional.</p>
+        <hr class="my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for service in services %}
+                <tr>
+                    <td><a href="{% url 'Service-Detail' service.pk %}">{{ service.services }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<a href="{% url 'Home' %}">Back to Home</a>
+{% endblock %}

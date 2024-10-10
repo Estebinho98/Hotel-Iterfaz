@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to Our Hotel{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron mt-4">
+        <h1 class="display-4">Welcome to Our Hotel</h1>
+        <p class="lead">Experience the luxury and comfort of our exquisite rooms and exceptional services.</p>
+        <hr class="my-4">
+        <p>Explore our wide range of services designed to make your stay memorable. Whether you are here for business or leisure, we ensure a pleasant and relaxing experience.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'Room-List' %}" role="button">View Rooms</a>
+        <a class="btn btn-secondary btn-lg" href="{% url 'Services-List' %}" role="button">View Services</a>
+        <a class="btn btn-success btn-lg" href="{% url 'Booking-Create' %}" role="button">Booking</a>
+        <a class="btn btn-success btn-lg" href="{% url 'Booking-Marriage-Create' %}" role="button">Marriage Booking</a>
+        <a class="btn btn-success btn-lg" href="{% url 'Booking-Family-Create' %}" role="button">Family Booking</a>
+        
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+/* Ejemplo de CSS personalizado */
+body {
+  
+    font-family: Arial, sans-serif;
+    background-image: url('../img/reserva.jpg');
+    background-size: cover; /* La imagen cubrirá toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin: 0;
+    padding: 0;
+    height: 150vh; /* Asegura que el fondo cubra toda la altura de la página */
+}
+
+.navbar-brand {
+    
+    background-color: rgba(144, 141, 141, 0.678);
+    
+    
+}
+
+.card {
+    margin-top: 20px;
+    
+    
+    
+}
+
+.card-header {
+    background-color: black;
+    
+}
+
+.card-body {
+    padding: 20px;
+    
+    
+}
+
+#navbarNav {
+    background-color: rgba(144, 141, 141, 0.678);
+}
+
+.container {
+    padding: 0px;
+}
+
+.jumbotron {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px; /* Para bordes redondeados*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+}
+
+.services-container {
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.room-container {
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
